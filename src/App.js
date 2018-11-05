@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './App.css';
+import './App.sass';
 import Car from './Components/Car/Car';
 
 class App extends Component {
@@ -19,11 +19,18 @@ class App extends Component {
   
    return (
     <div className="App">
-     <h3>{this.state.pageTitle}</h3>
-     <Car name={ car[0].name} year={ car[0].year} colorz={'Red'} />
-     <Car name={ car[1].name} year={ car[1].year} colorz={'Blue'} />
-     <Car name={ car[2].name} year={ car[2].year} colorz={'White'} />
-     <Car name={ car[3].name} year={ car[3].year} colorz={'Green'} />
+      <div className="topTitle">
+         <h3>{this.state.pageTitle}</h3>
+      </div>
+
+      <button className="butTitle">Change title</button>
+
+      <div className="carList">
+         <Car name={car[0].name} year={car[0].year} colorz={'Red'} />
+         <Car name={car[1].name} year={car[1].year} colorz={'Blue'} />
+         <Car name={car[2].name} year={car[2].year} colorz={'White'} />
+         <Car name={car[3].name} year={car[3].year} colorz={'Green'} />
+      </div>
     </div>
    );
   }
