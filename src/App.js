@@ -13,6 +13,11 @@ class App extends Component {
     pageTitle: "Cards Car"
   }
 
+
+  changeTopTitleHandler = () => {
+    console.log("Click")
+  }
+
   render() { 
 
    const car = this.state.cars
@@ -23,7 +28,7 @@ class App extends Component {
          <h3>{this.state.pageTitle}</h3>
       </div>
 
-      <button className="butTitle">Change title</button>
+      <button className="butTitle" onClick={this.changeTopTitleHandler}>Change title</button>
 
       <div className="carList">
          <Car name={car[0].name} year={car[0].year} colorz={'Red'} />
