@@ -6,5 +6,6 @@ export default (props) => (
         <h3>Car name: {props.name}</h3>
         <p>Year: {props.year}</p>
         <p>Color: <span style = {{ color: "blue" }}> {props.colorz} </span></p>
+        <button onClick={ props.onChanegTit }>Click</button>
     </div>
 )
