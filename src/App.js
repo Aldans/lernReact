@@ -13,7 +13,7 @@ class App extends Component {
     pageTitle: "Cards Car"
   }
 
-
+  // функция меняющая тайтел
   changeTopTitleHandler = (newTitle) => {
     this.setState({
       pageTitle: newTitle
@@ -26,14 +26,22 @@ class App extends Component {
    const car = this.state.cars
   
    return (
+
     <div className="App">
       <div className="topTitle">
          <h3>{this.state.pageTitle}</h3>
       </div>
 
-      <button className="butTitle" onClick={this.changeTopTitleHandler.bind(this, ' changed ')}>Change title</button>
+      <div className="wrap-btn">
 
-      <div className="carList">
+        <input type="text" onChange={this.changledInp}/>
+
+        <button className="butTitle" onClick={this.changeTopTitleHandler.bind(this, ' changed ' )}>Change title</button>
+        {/* 'changed' это передаваемый параметр -> 'props' */}
+      </div>
+
+      <div className="wrap-carList">
+        <div className="carList">
          <Car name={car[0].name} 
               year={car[0].year} 
               colorz={'Red'} 
@@ -50,8 +58,11 @@ class App extends Component {
               year={car[3].year} 
               colorz={'Green'} 
               onChanegTit={ this.changeTopTitleHandler.bind(this, car[3].name) } />
+        </div>
       </div>
+
     </div>
+  
    );
   }
 }
