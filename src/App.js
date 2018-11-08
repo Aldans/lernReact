@@ -13,13 +13,19 @@ class App extends Component {
     pageTitle: "Cards Car"
   }
 
-  // функция меняющая тайтел
+  // функция меняющая тайтл
   changeTopTitleHandler = (newTitle) => {
     this.setState({
       pageTitle: newTitle
     })
   }
 
+  // событие на импут
+  hengledInp = (event) => {
+    this.setState({
+      pageTitle: event.target.value
+    })  
+  }
 
   render() { 
 
@@ -34,7 +40,7 @@ class App extends Component {
 
       <div className="wrap-btn">
 
-        <input type="text" onChange={this.changledInp}/>
+        <input type="text" onChange={this.hengledInp}/>
 
         <button className="butTitle" onClick={this.changeTopTitleHandler.bind(this, ' changed ' )}>Change title</button>
         {/* 'changed' это передаваемый параметр -> 'props' */}
